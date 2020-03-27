@@ -16,7 +16,9 @@ def TreeDeclaration():
 	# Tree declaration
 	mainTree = tree()
 	Root = mainTree.Node('_')
-	Empty = mainTree.Node('_')
+	Temporary = mainTree.Node('_')
+	Empty = mainTree.Node('/')
+
 	mainTree.root = Root
 
 	# Declaration of the Nodes
@@ -25,10 +27,10 @@ def TreeDeclaration():
 	for ch in ascii_lowercase:
 		node = mainTree.Node(ch)
 		di[ch] = node
-	# # For 0 to 9
-	# for i in range(10):
-	# 	node = mainTree.Node(str(i))
-	# 	di[str(i)] = node
+	# For 0 to 9
+	for i in range(10):
+		node = mainTree.Node(str(i))
+		di[str(i)] = node
 
 	# print(di['1'].value)
 
@@ -65,11 +67,11 @@ def TreeDeclaration():
 	di['s'].depth = 3
 
 	di['u'].left = di['f']
-	di['u'].right = copy.deepcopy(Empty)
+	di['u'].right = copy.deepcopy(Temporary)
 	di['u'].depth = 3
 
 	di['r'].left = di['l']
-	di['r'].right = copy.deepcopy(Empty)
+	di['r'].right = copy.deepcopy(Temporary)
 	di['r'].depth = 3
 
 	di['w'].left = di['p']
@@ -88,8 +90,8 @@ def TreeDeclaration():
 	di['g'].right = di['q']
 	di['g'].depth = 3
 
-	di['o'].left = copy.deepcopy(Empty)
-	di['o'].right = copy.deepcopy(Empty)
+	di['o'].left = copy.deepcopy(Temporary)
+	di['o'].right = copy.deepcopy(Temporary)
 	di['o'].depth = 3
 
 	# di['h'].left = di['5']
@@ -106,56 +108,61 @@ def TreeDeclaration():
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
 
 	# di['o'].left = copy.deepcopy(Empty)
 	# di['o'].right = copy.deepcopy(Empty)
-	# di['o'].depth = 3
+	# di['o'].depth = 4
+
 	# print(mainTree.root.left.left.value)
+	# for x in di:
+	# 	if di[x].left != None and di[x].right !=None:
+	# 		print(di[x].value,di[x].left.value,di[x].right.value)
+
 	return mainTree
 
 

@@ -25,7 +25,11 @@ def ChangeToMorseCode(string):
 		currMorse = ''
 		for letter in part:
 			rootNode = mainTree.root
-			currMorse = SearchInTree(letter)
+			currMorse = SearchInTree(letter.lower())
+			finalCode += currMorse+' '
+		finalCode += '\n'
+	print(finalCode)
+	return finalCode
 
 def SearchInTree(letter):
 	currNode = mainTree.root
@@ -41,21 +45,20 @@ def SearchInTree(letter):
 		currMorse = currNode[1]
 		if currNode[0].value == letter:
 			complete = True
-			print(currMorse)
 			break
 
-		if currNode[0].depth<=4:
-			if currNode[0].left!=None:
-				temp = currMorse
-				temp += '.'
-				totalList.append([currNode[0].left,temp])
+		if currNode[0].left!=None:
+			temp = currMorse
+			temp += '.'
+			totalList.append([currNode[0].left,temp])
 
-			if currNode[0].right!= None:
-				temp = currMorse
-				temp +='-'
-				totalList.append([currNode[0].right,temp])
+		if currNode[0].right!= None:
+			temp = currMorse
+			temp +='-'
+			totalList.append([currNode[0].right,temp])
 		counter+=1
+	return currMorse
 
 if __name__ == '__main__':
-	ChangeToEnglish('.... ..- ---')
-	ChangeToMorseCode('huo')
+	ChangeToEnglish('.... ..- --- ..-.')
+	ChangeToMorseCode('huof huo')
